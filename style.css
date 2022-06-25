@@ -1,0 +1,85 @@
+html{
+    min-height: 100%;
+}
+body{
+    font-family: 'Courier New', Courier, monospace;
+    color: antiquewhite;
+    margin: 0;
+    background-color:#051428;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid antiquewhite;
+    
+}
+.logo{
+    height: 70px;
+    width: auto;
+}
+.title{
+    font-size: 30px;
+}
+.canvas{
+    height: 400px;
+}
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+.button button{
+    width: 150px;
+    height: 80px;
+    border-radius: 20px;
+    border: 2px solid antiquewhite;
+    background-color: #051428;
+    color: antiquewhite;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 50px;
+}
+.content{
+    flex: 2;
+    padding: 50px;
+}
+.footer{
+    margin: 0;
+    padding: 5px;
+    border-top: 1px solid antiquewhite;
+    margin-bottom: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.stop{
+    opacity: 0;
+}
+.story{
+    transition: all 2s fade;
+}
+.anime{
+    opacity: 1;
+    transform: (1.2);
+    
+}
+.canvas{
+    display: flex;
+    flex-direction: column  ;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+.canvas .stats{
+    border: 2px solid gray;
+    padding: 10px;
+    border-radius: 10px;
+}
