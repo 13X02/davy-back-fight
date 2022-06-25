@@ -1,5 +1,8 @@
 const buttons = document.querySelectorAll('.button');
-const rounds = document.querySelectorAll('.stats');
+const rounds = document.querySelectorAll('.round');
+const result = document.querySelector('.result');
+const playAgain = document.querySelector('.play-again');
+const endText = document.querySelector('end-text');
 let playerLives = 5;
 let computerLives = 5;
 let round = 0;
@@ -12,8 +15,9 @@ function computerPlay(){
 }
 function checkRound(){
     round+=1;
+    console.log(round);
     rounds.textContent = `Round:${round}`;
-    return round;
+    
 }
 function resetGame(){
     playAgain.addEventListener('click',()=>{
@@ -21,8 +25,35 @@ function resetGame(){
     });
 }
 function checkWin(player,computer){
-    const result = document.querySelector('result');
-    if(player===computer)
+    
+    if(player===computer){
+        result.textContent = "Its a Tie,No crew members were lost";
+    }else if((computer==='rock'&&player==='paper')||(computer==='paper'&&player==='scissor')||(computer==='scissor'&&player==='rock')){
+        result.textContent = "Yay! You won ,you got a crew member ";
+        computerLives-=1;
+    }else{
+        result.textContent ="Play safe ,You lost a crew member";
+        playerLives-=1;
+    }
+    const stat = document.querySelector('.stats');
+    stat.textContent = `Your crew ${playerLives} | Foxy Pirates ${computerLives}`
+
+}
+function endGame(pl,cl){
+    if(pl===0||cl===0){
+        buttons.forEach((button)=>()=>{
+            button.setAttribute('disabled','');
+            button.classList.add('disabled-button','opacity');
+        });
+        if(pl>cl){
+            result.textContent = "Foxy Pirates Lost ,They don't have anymore Lives";
+            endText.textContent = "You won this Fight,Lets Party !!";
+        }else{
+            result.textContent = "They Won You don't have anymore cre left :(";
+            endText.textContent="You Lost this fight";
+        }
+        playAgain.style.visibility = 'visible';
+    }
 }
 function playGame(){
     let player;
