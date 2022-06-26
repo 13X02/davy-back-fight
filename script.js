@@ -1,23 +1,16 @@
 const buttons = document.querySelectorAll('.button');
-const rounds = document.querySelectorAll('.round');
 const result = document.querySelector('.result');
 const playAgain = document.querySelector('.play-again');
 const endText = document.querySelector('end-text');
+const modal = document.querySelector('.end');
 let playerLives = 5;
 let computerLives = 5;
-let round = 0;
 
 function computerPlay(){
     const options = ['rock','paper','scissor'];
     const computer = options[Math.floor(Math.random()*options.length)];
     console.log(computer);
     return computer;
-}
-function checkRound(){
-    round+=1;
-    console.log(round);
-    rounds.textContent = `Round:${round}`;
-    
 }
 function resetGame(){
     playAgain.addEventListener('click',()=>{
@@ -40,19 +33,16 @@ function checkWin(player,computer){
 
 }
 function endGame(pl,cl){
-    if(pl===0||cl===0){
-        buttons.forEach((button)=>()=>{
-            button.setAttribute('disabled','');
-            button.classList.add('disabled-button','opacity');
-        });
+    if(pl==0||cl==0){
         if(pl>cl){
             result.textContent = "Foxy Pirates Lost ,They don't have anymore Lives";
-            endText.textContent = "You won this Fight,Lets Party !!";
+            endText.textContent="test";
+            
         }else{
             result.textContent = "They Won You don't have anymore cre left :(";
-            endText.textContent="You Lost this fight";
+            endText.textContent="test";
         }
-        playAgain.style.visibility = 'visible';
+        modal.style.display = "flex";
     }
 }
 function playGame(){
@@ -66,7 +56,6 @@ function playGame(){
             }else{
                 player='paper';
             }
-            checkRound();
             checkWin(player,computerPlay());
             endGame(playerLives,computerLives);
             resetGame();
