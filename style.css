@@ -3,7 +3,7 @@ html{
 }
 body{
     font-family: 'Courier New', Courier, monospace;
-    color: #051428;
+    color: antiquewhite;
     margin: 0;
     background-color:antiquewhite;
     height: 100vh;
@@ -40,14 +40,24 @@ body{
     height: 80px;
     border-radius: 20px;
     border: 2px solid #051428;
-    background-color: antiquewhite;
+    background: rgba(0, 0, 0, 0.5);
     color: #051428;
     font-family: 'Courier New', Courier, monospace;
     font-size: 50px;
+    transition: all .09s ease;
+}
+.end-image{
+    width: 300px;
+    height: auto;
+}
+.button :hover{
+    transform: scale(1.2);
+    border-color: blueviolet;
+    box-shadow: 0 0 1rem #ffc600;
 }
 .content{
     flex: 2;
-    padding: 50px;
+    padding: 100px;
 }
 .footer{
     margin: 0;
@@ -100,3 +110,28 @@ body{
     background-color: #051428;
     color: antiquewhite;
   }
+.icon img{
+    width: 30px;
+    height: auto;
+}
+.social{
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
+.main{
+  position: fixed;
+  top:0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  padding: 20px;
+}  
