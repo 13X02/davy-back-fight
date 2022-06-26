@@ -1,7 +1,7 @@
 const buttons = document.querySelectorAll('.button');
 const result = document.querySelector('.result');
 const playAgain = document.querySelector('.play-again');
-const endText = document.querySelector('end-text');
+const endText = document.querySelector('.end-text');
 const modal = document.querySelector('.end');
 let playerLives = 5;
 let computerLives = 5;
@@ -36,11 +36,11 @@ function endGame(pl,cl){
     if(pl==0||cl==0){
         if(pl>cl){
             result.textContent = "Foxy Pirates Lost ,They don't have anymore Lives";
-            endText.textContent="test";
+            endText.textContent="You Won this Fight";
             
         }else{
             result.textContent = "They Won You don't have anymore cre left :(";
-            endText.textContent="test";
+            endText.textContent="You Lost this Fight";
         }
         modal.style.display = "flex";
     }
